@@ -30,16 +30,15 @@
 <meta property="og:site_name" content="Peng Frank Ji">
 <meta property="og:description" content="This blog is to build a regression model to forecast the sale price of houses. I got data from kaggele(https:&#x2F;&#x2F;www.kaggle.com&#x2F;c&#x2F;home-data-for-ml-course). 1. Prepare1.1. library packages123456789librar">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/NA_percent.png">
-<meta property="og:image" content="http://example.com/2020/12/17/Regression/%5Ccorrelation.png">
-<meta property="og:image" content="http://example.com/2020/12/17/Regression/%5CBoruta.png">
-<meta property="og:image" content="http://example.com/2020/12/17/Regression/%5Chist.png">
-<meta property="og:image" content="http://example.com/Users/jipeng/Documents/Study/Study_myself/Blog/source/_posts/Regression/qqplot.png">
+<meta property="og:image" content="http://example.com/.com//NA_percent.png">
+<meta property="og:image" content="http://example.com/.com//%5Ccorrelation.png">
+<meta property="og:image" content="http://example.com/.com//%5CBoruta.png">
+<meta property="og:image" content="http://example.com/.com//%5Chist.png">
 <meta property="article:published_time" content="2020-12-17T15:14:19.000Z">
-<meta property="article:modified_time" content="2020-12-19T03:11:45.439Z">
+<meta property="article:modified_time" content="2020-12-19T03:20:18.205Z">
 <meta property="article:author" content="Peng Frank Ji">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/NA_percent.png">
+<meta name="twitter:image" content="http://example.com/.com//NA_percent.png">
 
 
 <link rel="canonical" href="http://example.com/2020/12/17/Regression/">
@@ -236,7 +235,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-12-19 11:11:45" itemprop="dateModified" datetime="2020-12-19T11:11:45+08:00">2020-12-19</time>
+        <time title="Modified: 2020-12-19 11:20:18" itemprop="dateModified" datetime="2020-12-19T11:20:18+08:00">2020-12-19</time>
       </span>
 
   
@@ -260,7 +259,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">count_na &lt;- function(x) &#123;</span><br><span class="line">  return(sum(is.na(x)))</span><br><span class="line">&#125;</span><br><span class="line">apply(data, 2, count_na) &#x2F; nrow(data)</span><br></pre></td></tr></table></figure>
 
 <p>Results are as follows:</p>
-<p><img src="/NA_percent.png" alt="percentage of NA&#39;s in each variable"></p>
+<p><img src="/.com//NA_percent.png" alt="percentage of NA&#39;s in each variable"></p>
 <p>From the result I decide to delete these variables: LotFrontage, Alley, FireplaceQu, PoolQC, Fence, MiscFeature</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data &lt;- subset(data, select &#x3D; -c(LotFrontage, Alley, FireplaceQu, PoolQC, Fence, MiscFeature))</span><br></pre></td></tr></table></figure>
 
@@ -268,18 +267,18 @@
 
 <h2 id="2-3-split-train-data-set-and-test-data-set"><a href="#2-3-split-train-data-set-and-test-data-set" class="headerlink" title="2.3. split train data set and test data set"></a>2.3. split train data set and test data set</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set.seed(123) </span><br><span class="line">split &lt;- sample.split(data, SplitRatio &#x3D; 0.6) </span><br><span class="line">train &lt;- subset(data, split &#x3D;&#x3D; TRUE)</span><br></pre></td></tr></table></figure>
 
-<h1 id="3-Choose-variables-and-Analyze-them"><a href="#3-Choose-variables-and-Analyze-them" class="headerlink" title="3. Choose variables and Analyze them"></a>3. Choose variables and Analyze them</h1><h2 id="3-1-check-correlations"><a href="#3-1-check-correlations" class="headerlink" title="3.1. check correlations"></a>3.1. check correlations</h2><p>I check the correlations between each variable here. Results are as follows:<br><img src="%5Ccorrelation.png" alt="correlation"></p>
+<h1 id="3-Choose-variables-and-Analyze-them"><a href="#3-Choose-variables-and-Analyze-them" class="headerlink" title="3. Choose variables and Analyze them"></a>3. Choose variables and Analyze them</h1><h2 id="3-1-check-correlations"><a href="#3-1-check-correlations" class="headerlink" title="3.1. check correlations"></a>3.1. check correlations</h2><p>I check the correlations between each variable here. Results are as follows:<br><img src="/.com//%5Ccorrelation.png" alt="correlation"></p>
 <h2 id="3-2-boruta"><a href="#3-2-boruta" class="headerlink" title="3.2. boruta"></a>3.2. boruta</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set.seed(1)</span><br><span class="line">boruta &lt;- Boruta(SalePrice ~ ., data &#x3D; train)</span><br><span class="line">print(boruta)</span><br></pre></td></tr></table></figure>
-<p><img src="%5CBoruta.png" alt="results of Boruta"></p>
+<p><img src="/.com//%5CBoruta.png" alt="results of Boruta"></p>
 <p>According to the results above, I want to choose “LotArea”, “YearBuilt”, “GrLivArea”, “BedroomAbvGr”, “KitchenAbvGr”, “HouseStyle”, “SalePrice” as independent variables.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cols &lt;- c(&quot;LotArea&quot;, &quot;YearBuilt&quot;, &quot;GrLivArea&quot;, &quot;BedroomAbvGr&quot;, &quot;KitchenAbvGr&quot;, &quot;HouseStyle&quot;, &quot;SalePrice&quot;)</span><br><span class="line">train_data &lt;- subset(train, select &#x3D; cols)</span><br></pre></td></tr></table></figure>
 
 <h2 id="3-3-analyze-the-independent-variables"><a href="#3-3-analyze-the-independent-variables" class="headerlink" title="3.3. analyze the independent variables"></a>3.3. analyze the independent variables</h2><p>Draw histogram:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">n_row &lt;- nrow(train_data)</span><br><span class="line">n_col &lt;- ncol(train_data)</span><br><span class="line">k &#x3D; 1 + log2(n_row)</span><br><span class="line">col_index &lt;- c(1: 5, 7)</span><br><span class="line">par(mfrow &#x3D; c(2, 3))</span><br><span class="line">for (i in col_index) &#123;</span><br><span class="line">  hist(train_data[, i], breaks &#x3D; k, main &#x3D; names(train)[i], xlab &#x3D; names(train)[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="%5Chist.png" alt="hist of independent variables"></p>
+<p><img src="/.com//%5Chist.png" alt="hist of independent variables"></p>
 <p>Draw qqPlot:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow &#x3D; c(2, 3))</span><br><span class="line">for (i in col_index) &#123;</span><br><span class="line">  qqPlot(~ train_data[, i], ylab &#x3D; names(train_data)[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/Users/jipeng/Documents/Study/Study_myself/Blog/source/_posts/Regression/qqplot.png" alt="qqplot of variables"></p>
+<p>[qqplot of variables(Regression/qqplot.png)]</p>
 
     </div>
 
