@@ -224,7 +224,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-05 19:46:24" itemprop="dateModified" datetime="2021-01-05T19:46:24+08:00">2021-01-05</time>
+        <time title="Modified: 2021-01-05 19:50:59" itemprop="dateModified" datetime="2021-01-05T19:50:59+08:00">2021-01-05</time>
       </span>
 
   
@@ -256,7 +256,7 @@
 
 <h2 id="2-3-split-train-data-set-and-test-data-set"><a href="#2-3-split-train-data-set-and-test-data-set" class="headerlink" title="2.3. split train data set and test data set"></a>2.3. split train data set and test data set</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set.seed(123) </span><br><span class="line">split &lt;- sample.split(data, SplitRatio &#x3D; 0.6) </span><br><span class="line">train &lt;- subset(data, split &#x3D;&#x3D; TRUE)</span><br></pre></td></tr></table></figure>
 
-<h1 id="3-Choose-variables-and-Analyze-them"><a href="#3-Choose-variables-and-Analyze-them" class="headerlink" title="3. Choose variables and Analyze them"></a>3. Choose variables and Analyze them</h1><h2 id="3-1-check-correlations"><a href="#3-1-check-correlations" class="headerlink" title="3.1. check correlations"></a>3.1. check correlations</h2><p>I check the correlations between each variable here. Results are as follows:<br><img src="/PengFrankJi/pengfrankji.github/%5Ccorrelation.png" alt="correlation"></p>
+<h1 id="3-Choose-variables-and-Analyze-them"><a href="#3-Choose-variables-and-Analyze-them" class="headerlink" title="3. Choose variables and Analyze them"></a>3. Choose variables and Analyze them</h1><h2 id="3-1-check-correlations"><a href="#3-1-check-correlations" class="headerlink" title="3.1. check correlations"></a>3.1. check correlations</h2><p>I check the correlations between each variable here. Results are as follows:<br><img src="/PengFrankJi/pengfrankji.github/correlation.png" alt="correlation"></p>
 <h2 id="3-2-boruta"><a href="#3-2-boruta" class="headerlink" title="3.2. boruta"></a>3.2. boruta</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set.seed(1)</span><br><span class="line">boruta &lt;- Boruta(SalePrice ~ ., data &#x3D; train)</span><br><span class="line">print(boruta)</span><br></pre></td></tr></table></figure>
 <p><img src="/PengFrankJi/pengfrankji.github/Boruta.png" alt="results of Boruta"></p>
 <p>According to the results above, I want to choose “LotArea”, “YearBuilt”, “GrLivArea”, “BedroomAbvGr”, “KitchenAbvGr”, “HouseStyle”, “SalePrice” as independent variables.</p>
@@ -268,7 +268,6 @@
 <p>Draw qqPlot:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow &#x3D; c(2, 3))</span><br><span class="line">for (i in col_index) &#123;</span><br><span class="line">  qqPlot(~ train_data[, i], ylab &#x3D; names(train_data)[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<img src="/PengFrankJi/pengfrankji.github/12/17/Regression/qqplot.png" class title="qqplot of variables">
 
 
       
