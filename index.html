@@ -224,7 +224,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-12-19 22:21:59" itemprop="dateModified" datetime="2020-12-19T22:21:59+08:00">2020-12-19</time>
+        <time title="Modified: 2021-01-05 18:40:25" itemprop="dateModified" datetime="2021-01-05T18:40:25+08:00">2021-01-05</time>
       </span>
 
   
@@ -237,7 +237,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>This blog is to build a regression model to forecast the sale price of houses. I got data from kaggele(<a target="_blank" rel="noopener" href="https://www.kaggle.com/c/home-data-for-ml-course">https://www.kaggle.com/c/home-data-for-ml-course</a>).</p>
+          <meta name="referrer" content="no-referrer">
+
+<p>This blog is to build a regression model to forecast the sale price of houses. I got data from kaggele(<a target="_blank" rel="noopener" href="https://www.kaggle.com/c/home-data-for-ml-course">https://www.kaggle.com/c/home-data-for-ml-course</a>).</p>
 <h1 id="1-Prepare"><a href="#1-Prepare" class="headerlink" title="1. Prepare"></a>1. Prepare</h1><h2 id="1-1-library-packages"><a href="#1-1-library-packages" class="headerlink" title="1.1. library packages"></a>1.1. library packages</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">library(corrplot)</span><br><span class="line">library(Boruta)</span><br><span class="line">library(leaps)</span><br><span class="line">library(lubridate)</span><br><span class="line">library(caTools)</span><br><span class="line">library(car)</span><br><span class="line">library(stats)</span><br><span class="line">library(lmtest)</span><br><span class="line">library(forecast)</span><br></pre></td></tr></table></figure>
 
 <h2 id="1-2-read-data"><a href="#1-2-read-data" class="headerlink" title="1.2. read data"></a>1.2. read data</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data &lt;- read.csv(&quot;~&#x2F;train.csv&quot;, header &#x3D; TRUE)</span><br></pre></td></tr></table></figure>
@@ -269,6 +271,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow &#x3D; c(2, 3))</span><br><span class="line">for (i in col_index) &#123;</span><br><span class="line">  qqPlot(~ train_data[, i], ylab &#x3D; names(train_data)[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <img src="/PengFrankJi/pengfrankji.github/12/17/Regression/qqplot.png" class title="qqplot of variables">
+
 
       
     </div>
@@ -467,7 +470,7 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
